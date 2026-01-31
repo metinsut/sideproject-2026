@@ -1,11 +1,11 @@
 {
-  "name": "sideproject-2026",
+  "name": "side-project-2026",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev --port 3000",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "bun --bun vite dev --host",
+    "build": "bun --bun vite build",
+    "preview": "bun --bun vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "bunx --bun biome check .",
     "lint:fix": "bunx --bun biome check . --write",

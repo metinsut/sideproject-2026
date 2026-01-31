@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "sideproject-2026",
+      "name": "side-project-2026",
       "dependencies": {
         "@base-ui/react": "latest",
         "@fontsource-variable/noto-sans": "latest",
