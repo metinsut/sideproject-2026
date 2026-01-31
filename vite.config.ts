@@ -8,11 +8,14 @@ import viteTsConfigPaths from "vite-tsconfig-paths";
 
 const config = defineConfig({
   server: {
+    port: 8080,
     open: true,
   },
   plugins: [
     devtools(),
-    nitro(),
+    nitro({
+      preset: "bun",
+    }),
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
       projects: ["./tsconfig.json"],
