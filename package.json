@@ -25,6 +25,7 @@
     "@tanstack/router-plugin": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
+    "motion": "latest",
     "nitro": "latest",
     "react": "latest",
     "react-dom": "latest",
