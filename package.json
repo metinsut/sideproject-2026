@@ -46,6 +46,7 @@
     "@vitejs/plugin-react": "latest",
     "jsdom": "latest",
     "typescript": "latest",
-    "vite": "latest"
+    "vite": "latest",
+    "babel-plugin-react-compiler": "latest"
   }
 }
