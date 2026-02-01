@@ -1,15 +1,8 @@
 "use client";
 
-import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip";
-import {
-  AnimatePresence,
-  type HTMLMotionProps,
-  type MotionValue,
-  motion,
-  type SpringOptions,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
+import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
+import type { HTMLMotionProps, MotionValue, SpringOptions } from "motion/react";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 import React from "react";
 import { useControlledState } from "@/hooks/use-controlled-state";
 import { getStrictContext } from "@/lib/get-strict-context";

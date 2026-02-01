@@ -1,7 +1,8 @@
 "use client";
 
-import { Checkbox as CheckboxPrimitive } from "@base-ui-components/react/checkbox";
-import { type HTMLMotionProps, motion, type SVGMotionProps } from "motion/react";
+import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
+import type { HTMLMotionProps, SVGMotionProps } from "motion/react";
+import { motion } from "motion/react";
 import React from "react";
 import { useControlledState } from "@/hooks/use-controlled-state";
 import { getStrictContext } from "@/lib/get-strict-context";

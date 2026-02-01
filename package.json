@@ -13,7 +13,6 @@
     "clear": "rm -rf node_modules && rm -rf dist && rm -rf bun.lock && rm -rf .tanstack && rm -rf .output"
   },
   "dependencies": {
-    "@base-ui-components/react": "^1.0.0-rc.0",
     "@base-ui/react": "latest",
     "@fontsource-variable/noto-sans": "latest",
     "@tabler/icons-react": "latest",
