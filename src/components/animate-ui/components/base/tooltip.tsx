@@ -63,7 +63,9 @@ export {
   Tooltip,
   TooltipTrigger,
   TooltipPanel,
+  TooltipProvider,
   type TooltipProps,
   type TooltipTriggerProps,
   type TooltipPanelProps,
+  type TooltipProviderProps,
 };

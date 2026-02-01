@@ -3,13 +3,13 @@
 import { type HTMLMotionProps, motion, type Transition } from "motion/react";
 import * as React from "react";
 import { useEffect, useLayoutEffect } from "react";
-import { Slot, type WithAsChild } from "@/components/animate-ui/primitives/animate/slot";
-import {
-  Highlight,
-  HighlightItem,
-  type HighlightItemProps,
-  type HighlightProps,
+import type { WithAsChild } from "@/components/animate-ui/primitives/animate/slot";
+import { Slot } from "@/components/animate-ui/primitives/animate/slot";
+import type {
+  HighlightItemProps,
+  HighlightProps,
 } from "@/components/animate-ui/primitives/effects/highlight";
+import { Highlight, HighlightItem } from "@/components/animate-ui/primitives/effects/highlight";
 import { getStrictContext } from "@/lib/get-strict-context";
 
 type TabsContextType = {
