@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
-    redirect({ to: "/app" });
+    throw redirect({ to: "/app" });
   },
   component: App,
 });

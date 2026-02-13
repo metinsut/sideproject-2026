@@ -17,7 +17,7 @@ const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/tanstack-circle-logo.png",
   },
   pages: [
     {
