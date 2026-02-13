@@ -1,6 +1,7 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { DirectionProvider } from "@/components/ui/direction";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { getThemeServerFn } from "@/functions/theme/theme-server";
 import type { ThemeTypes } from "@/functions/theme/types";
@@ -54,28 +55,31 @@ type RootDocumentProps = {
 function RootDocument(props: RootDocumentProps) {
   const { children, theme } = props;
   const locale = getLocale();
+  const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} className={theme} suppressHydrationWarning>
+    <html lang={locale} dir={direction} className={theme} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
-        <TooltipProvider>
-          {children}
-          <TanStackDevtools
-            config={{
-              position: "bottom-right",
-            }}
-            plugins={[
-              {
-                name: "Tanstack Router",
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-            ]}
-          />
-          <Scripts />
-        </TooltipProvider>
+        <DirectionProvider direction={direction}>
+          <TooltipProvider>
+            {children}
+            <TanStackDevtools
+              config={{
+                position: "bottom-right",
+              }}
+              plugins={[
+                {
+                  name: "Tanstack Router",
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+              ]}
+            />
+            <Scripts />
+          </TooltipProvider>
+        </DirectionProvider>
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
 import { NavSecondary } from "./nav-secondary";
 import { NavUser } from "./nav-user";
 
@@ -37,9 +38,14 @@ const getNavData = () => ({
 
 export function AppSidebar() {
   const data = getNavData();
+  const locale = getLocale();
+
+  const dir = locale === "ar" ? "rtl" : "ltr";
+  const side = dir === "rtl" ? "right" : "left";
+
   return (
     <ClientOnly>
-      <Sidebar variant="inset">
+      <Sidebar variant="inset" dir={dir} side={side}>
         <SidebarHeader>
           <Link to="/app">{m.sideProject2026()}</Link>
         </SidebarHeader>
