@@ -4,6 +4,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { getThemeServerFn } from "@/functions/theme/theme-server";
 import type { ThemeTypes } from "@/functions/theme/types";
+import { m } from "@/paraglide/messages";
 import { getLocale } from "@/paraglide/runtime";
 import appCss from "../styles.css?url";
 
@@ -18,7 +19,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: m.appTitle(),
       },
     ],
     links: [
@@ -28,7 +29,7 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  notFoundComponent: () => <div>Not Found</div>,
+  notFoundComponent: () => <div>{m.notFound()}</div>,
   shellComponent: RootComponent,
   loader: async () => {
     const theme = await getThemeServerFn();

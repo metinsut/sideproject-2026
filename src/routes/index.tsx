@@ -1,4 +1,5 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import { m } from "@/paraglide/messages";
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
@@ -8,5 +9,5 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-  return <div className="flex flex-col gap-4 max-w-4xl">landing</div>;
+  return <div className="flex flex-col gap-4 max-w-4xl">{m.landing()}</div>;
 }

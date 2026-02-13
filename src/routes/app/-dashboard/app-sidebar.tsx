@@ -11,10 +11,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { m } from "@/paraglide/messages";
 import { NavSecondary } from "./nav-secondary";
 import { NavUser } from "./nav-user";
 
-const data = {
+const getNavData = () => ({
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -22,24 +23,25 @@ const data = {
   },
   pages: [
     {
-      title: "Home",
+      title: m.home(),
       url: "/app",
       icon: IconHome,
     },
     {
-      title: "Projects",
+      title: m.projects(),
       url: "/app/projects",
       icon: IconFolder,
     },
   ],
-};
+});
 
 export function AppSidebar() {
+  const data = getNavData();
   return (
     <ClientOnly>
       <Sidebar variant="inset">
         <SidebarHeader>
-          <Link to="/app">Side Project 2026</Link>
+          <Link to="/app">{m.sideProject2026()}</Link>
         </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>

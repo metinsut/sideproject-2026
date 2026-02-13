@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { ThemeEnum, themeCookieName } from "@/functions/theme/types";
+import { m } from "@/paraglide/messages";
 
 type SettingsThemeProps = Record<string, never>;
 
@@ -24,12 +25,12 @@ export function Theme(_props: SettingsThemeProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Select Theme</CardTitle>
+        <CardTitle>{m.selectTheme()}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex items-center justify-between gap-4">
           <Label htmlFor="theme-switch" className="text-sm">
-            {isDark ? "Dark" : "Light"} mode
+            {isDark ? m.darkMode() : m.lightMode()} mode
             {isDark ? (
               <IconMoon className="text-muted-foreground size-5" />
             ) : (

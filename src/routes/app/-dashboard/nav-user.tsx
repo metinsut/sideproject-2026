@@ -10,6 +10,7 @@ import {
 } from "@tabler/icons-react";
 import { ClientOnly } from "@tanstack/react-router";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { m } from "@/paraglide/messages";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -74,28 +75,28 @@ export function NavUser({
               <DropdownMenuGroup>
                 <DropdownMenuItem>
                   <IconSparkles />
-                  Upgrade to Pro
+                  {m.upgradeToPro()}
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem>
                   <IconBadge />
-                  Account
+                  {m.account()}
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <IconCreditCard />
-                  Billing
+                  {m.billing()}
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <IconBell />
-                  Notifications
+                  {m.notifications()}
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <IconLogout />
-                Log out
+                {m.logOut()}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

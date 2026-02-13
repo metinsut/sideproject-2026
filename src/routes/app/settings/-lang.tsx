@@ -39,7 +39,7 @@ export function Lang() {
       <CardContent>
         <Select value={currentLocaleLabel} onValueChange={handleChangeLanguage}>
           <SelectTrigger className="min-w-48">
-            <SelectValue placeholder="Select language" />
+            <SelectValue placeholder={m.selectLanguage()} />
           </SelectTrigger>
           <SelectContent>
             {locales.map((locale) => (

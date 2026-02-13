@@ -1,6 +1,7 @@
 import { IconSettings } from "@tabler/icons-react";
 import { Link } from "@tanstack/react-router";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
+import { m } from "@/paraglide/messages";
 
 export function NavSecondary() {
   return (
@@ -10,7 +11,7 @@ export function NavSecondary() {
           render={
             <Link to="/app/settings">
               <IconSettings />
-              Settings
+              {m.settings()}
             </Link>
           }
         />
