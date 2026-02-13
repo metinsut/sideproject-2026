@@ -6,6 +6,7 @@
     "dev": "bun --bun vite dev --host",
     "build": "bun --bun vite build",
     "preview": "bun --bun vite preview",
+    "start": "bun run .output/server/index.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "bunx --bun biome check .",
     "lint:fix": "bunx --bun biome check . --write",

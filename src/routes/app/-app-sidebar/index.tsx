@@ -47,7 +47,7 @@ export function AppSidebar() {
                 <SidebarMenuButton
                   render={
                     <Link to={page.url}>
-                      <page.icon className="size-4" />
+                      <page.icon />
                       {page.title}
                     </Link>
                   }
