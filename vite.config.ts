@@ -17,7 +17,6 @@ const config = defineConfig({
       project: "./project.inlang",
       outdir: "./src/paraglide",
       strategy: ["cookie", "baseLocale", "preferredLanguage"],
-      cookieName: "paraglide-locale",
     }),
     devtools(),
     nitro({

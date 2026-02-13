@@ -1,4 +1,3 @@
-import { ClientOnly } from "@tanstack/react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -10,19 +9,27 @@ import {
 import { m } from "@/paraglide/messages";
 import { getLocale, locales, setLocale } from "@/paraglide/runtime";
 
+type Locale = (typeof locales)[number];
+type LocaleLabel = {
+  [key in Locale]: string;
+};
+
 export function Lang() {
   const currentLocale = getLocale();
 
-  function handleChangeLanguage(value: (typeof locales)[number] | null) {
-    if (value !== null) setLocale(value);
+  function handleChangeLanguage(value: string | null) {
+    if (value === null) return;
+    if (locales.includes(value as Locale)) setLocale(value as Locale);
   }
 
-  const localeLabels = {
+  const localeLabels: LocaleLabel = {
     en: m.english(),
     tr: m.turkish(),
     de: m.german(),
     ar: m.arabic(),
   };
+
+  const currentLocaleLabel = localeLabels[currentLocale as Locale];
 
   return (
     <Card>
@@ -30,20 +37,18 @@ export function Lang() {
         <CardTitle>{m.language()}</CardTitle>
       </CardHeader>
       <CardContent>
-        <ClientOnly fallback={<div className="text-muted-foreground text-sm">Loading...</div>}>
-          <Select value={currentLocale} onValueChange={handleChangeLanguage}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select language" />
-            </SelectTrigger>
-            <SelectContent>
-              {locales.map((locale) => (
-                <SelectItem key={locale} value={locale}>
-                  {localeLabels[locale]}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </ClientOnly>
+        <Select value={currentLocaleLabel} onValueChange={handleChangeLanguage}>
+          <SelectTrigger className="min-w-48">
+            <SelectValue placeholder="Select language" />
+          </SelectTrigger>
+          <SelectContent>
+            {locales.map((locale) => (
+              <SelectItem key={locale} value={locale}>
+                {localeLabels[locale]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </CardContent>
     </Card>
   );
