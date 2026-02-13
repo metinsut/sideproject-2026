@@ -1,9 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState } from "react";
-import { Checkbox } from "@/components/animate-ui/components/base/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-export const Route = createFileRoute("/")({ component: App });
+export const Route = createFileRoute("/")({
+  beforeLoad: () => {
+    redirect({ to: "/app" });
+  },
+  component: App,
+});
 
 function App() {
   const [checked, setChecked] = useState(false);
