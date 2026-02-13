@@ -10,7 +10,6 @@ import {
 } from "@tabler/icons-react";
 import { ClientOnly } from "@tanstack/react-router";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { m } from "@/paraglide/messages";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,16 +25,15 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { m } from "@/paraglide/messages";
 
-export function NavUser({
-  user,
-}: {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-}) {
+const user = {
+  name: "shadcn",
+  email: "m@example.com",
+  avatar: "/tanstack-circle-logo.png",
+};
+
+export function NavUser() {
   const { isMobile } = useSidebar();
 
   return (

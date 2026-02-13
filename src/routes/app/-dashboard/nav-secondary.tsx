@@ -9,7 +9,10 @@ export function NavSecondary() {
       <SidebarMenuItem>
         <SidebarMenuButton
           render={
-            <Link to="/app/settings">
+            <Link
+              to="/app/settings"
+              activeProps={{ className: "bg-primary text-primary-foreground" }}
+            >
               <IconSettings />
               {m.settings()}
             </Link>
