@@ -11,6 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { NavSecondary } from "./nav-secondary";
 import { NavUser } from "./nav-user";
 
 const data = {
@@ -55,6 +56,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
             ))}
           </SidebarMenu>
+          <NavSecondary />
         </SidebarContent>
         <SidebarFooter>
           <NavUser user={data.user} />

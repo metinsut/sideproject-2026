@@ -13,9 +13,9 @@ function AppComponent() {
       <AppSidebar />
       <SidebarInset>
         <Header />
-        <main className="flex flex-1 flex-col p-3">
+        <div className="flex flex-1 flex-col p-3">
           <Outlet />
-        </main>
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );
