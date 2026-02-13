@@ -1,7 +1,10 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { getThemeServerFn } from "@/functions/theme/theme-server";
+import type { ThemeTypes } from "@/functions/theme/types";
+import { getLocale } from "@/paraglide/runtime";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -26,12 +29,33 @@ export const Route = createRootRoute({
     ],
   }),
   notFoundComponent: () => <div>Not Found</div>,
-  shellComponent: RootDocument,
+  shellComponent: RootComponent,
+  loader: async () => {
+    const theme = await getThemeServerFn();
+    return { theme };
+  },
 });
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
+  const { theme } = Route.useLoaderData();
   return (
-    <html lang="en">
+    <RootDocument theme={theme}>
+      <Outlet />
+    </RootDocument>
+  );
+}
+
+type RootDocumentProps = {
+  children: React.ReactNode;
+  theme: ThemeTypes;
+};
+
+function RootDocument(props: RootDocumentProps) {
+  const { children, theme } = props;
+  const locale = getLocale();
+
+  return (
+    <html lang={locale} className={theme} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

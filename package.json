@@ -11,7 +11,8 @@
     "lint": "bunx --bun biome check .",
     "lint:fix": "bunx --bun biome check . --write",
     "lint:unsafe": "bunx --bun biome check . --write --unsafe",
-    "clear": "rm -rf node_modules && rm -rf dist && rm -rf bun.lock && rm -rf .tanstack && rm -rf .output"
+    "clear": "rm -rf node_modules && rm -rf dist && rm -rf bun.lock && rm -rf .tanstack && rm -rf .output",
+    "machine-translate": "inlang machine translate --project project.inlang"
   },
   "dependencies": {
     "@base-ui/react": "latest",
@@ -48,6 +49,8 @@
     "jsdom": "latest",
     "typescript": "latest",
     "vite": "latest",
-    "babel-plugin-react-compiler": "latest"
+    "babel-plugin-react-compiler": "latest",
+    "@inlang/paraglide-js": "latest",
+    "@inlang/cli": "latest"
   }
 }

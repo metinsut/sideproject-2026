@@ -1,0 +1,9 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "example_message": "Merhaba {username}",
+  "language": "Dil Seçimi",
+  "english": "İngilizce",
+  "turkish": "Türkçe",
+  "german": "Almanca",
+  "arabic": "Arapça"
+}

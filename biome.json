@@ -9,7 +9,8 @@
       "!src/routeTree.gen.ts",
       "!node_modules",
       "!.nitro",
-      "!.output"
+      "!.output",
+      "!src/paraglide"
     ]
   },
   "linter": {
@@ -35,7 +36,8 @@
       "!src/routeTree.gen.ts",
       "!node_modules",
       "!.nitro",
-      "!.output"
+      "!.output",
+      "!src/paraglide"
     ]
   },
   "javascript": {
