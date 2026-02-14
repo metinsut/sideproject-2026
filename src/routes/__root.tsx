@@ -34,13 +34,13 @@ export const Route = createRootRoute({
   shellComponent: RootComponent,
   loader: async () => {
     const theme = await getThemeServerFn();
-    return { theme };
+    const locale = getLocale();
+    return { theme, locale };
   },
 });
 
 function RootComponent() {
-  const { theme } = Route.useLoaderData();
-  const locale = getLocale();
+  const { theme, locale } = Route.useLoaderData();
   return (
     <RootDocument theme={theme} locale={locale}>
       <Outlet />
