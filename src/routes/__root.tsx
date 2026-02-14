@@ -40,8 +40,9 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   const { theme } = Route.useLoaderData();
+  const locale = getLocale();
   return (
-    <RootDocument theme={theme}>
+    <RootDocument theme={theme} locale={locale}>
       <Outlet />
     </RootDocument>
   );
@@ -50,11 +51,11 @@ function RootComponent() {
 type RootDocumentProps = {
   children: React.ReactNode;
   theme: ThemeTypes;
+  locale: string;
 };
 
 function RootDocument(props: RootDocumentProps) {
-  const { children, theme } = props;
-  const locale = getLocale();
+  const { children, theme, locale } = props;
   const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (

@@ -3,7 +3,7 @@ import { m } from "@/paraglide/messages";
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
-    throw redirect({ to: "/app" });
+    throw redirect({ to: "/app/home" });
   },
   component: App,
 });
